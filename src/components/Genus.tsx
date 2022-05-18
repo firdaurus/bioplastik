@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface Props {
-    abjad : string,
-    judul : string,
-    teks : string,
-    onClick : () => void
+    abjad: string,
+    judul: string,
+    teks: string,
+    onClick: () => void
 }
 
 export default function Genus(props: Props) {
