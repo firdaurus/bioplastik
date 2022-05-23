@@ -17,6 +17,7 @@ export default function Kuis() {
     const [jawabans, setJawabans] = React.useState([null, null, null, null, null])
     
 
+    
     React.useEffect(function(){
         //ambil kuis, masukkan ke state kuises. 
         let kuisUmum = kuis.umum.sort(() => 0.5 - Math.random()).slice(0,2)
