@@ -1,8 +1,4 @@
-import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import { setGenusFromHash } from './redux/slices/dataSlice';
-import { useAppDispatch } from './redux/hooks';
 
 import CaptureScan from './pages/CaptureScan';
 import KunciDeterminasi from './pages/KunciDeterminasi';
@@ -15,22 +11,13 @@ import './index.css';
 
 function App() {
 
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    const savedHash = localStorage.getItem('hash');
-    if (savedHash) {
-      dispatch(setGenusFromHash(savedHash));
-    }
-  }, [dispatch])
-
   return (
     <Router>
       <Routes>
         <Route path="/" element={<KunciDeterminasi />} />
         <Route path="/salah" element={<Salah />} />
         <Route path="/materi" element={<Materi />} />
-        <Route path="/loading" element={<Loading />} />
+        <Route path="/loading" element={<Loading />} /> {/* TODO: Remove this */}
         <Route path="/nilai" element={<Nilai />} />
         <Route path="/qr/:hash" element={<CaptureScan />} />
       </Routes>

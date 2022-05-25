@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import Loading from './Loading';
+
 import linkQR from '../data/linkQR'
 import { setGenus } from '../redux/slices/dataSlice'
 import { useAppDispatch } from '../redux/hooks'
@@ -29,5 +31,5 @@ export default function CaptureScan() {
     }
   }, [dispatch, navigate])
 
-  return isError ? <div>Error</div> : <div>Loading...</div>
+  return isError ? <div>Error</div> : <Loading />
 }
