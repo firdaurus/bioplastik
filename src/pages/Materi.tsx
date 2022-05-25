@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import fissidens from '../assets/images/fissidens.jpg';
+import DetailMateri from '../components/DetailMateri';
 import Header from '../components/Header';
 import { getMateri } from '../data/linkQR';
 import MateriClass from '../data/materi/Materi';
@@ -61,38 +62,9 @@ export default function Materi() {
                             <span className="italic font-semibold text-lg mt-2">Fissidens</span>
                             <span>ini sumber gambarnya</span>
                         </div>
-
-                        {/* Taxonomy */}
-                        <table className="grid grid-cols-2 w-full">
-                            <tbody>
-                                <tr>
-                                    <th className="w-1/2">Kingdom</th>
-                                    <td className="w-1/2">suatu kingdom</td>
-                                </tr>
-                                <tr>
-                                    <th>Kingdom</th>
-                                    <td>suatu kingdom</td>
-                                </tr>
-                                <tr>
-                                    <th>Kingdom</th>
-                                    <td>suatu kingdom</td>
-                                </tr>
-                                <tr>
-                                    <th>Kingdom</th>
-                                    <td>suatu kingdom</td>
-                                </tr>
-                                <tr>
-                                    <th>Kingdom</th>
-                                    <td>suatu kingdom</td>
-                                </tr>
-                                <tr>
-                                    <th>Kingdom</th>
-                                    <td>suatu kingdom</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
+                <DetailMateri />
                 {/* <div className="flex flex-col gap-4 mt-8">
                     <p className="border-b border-gray-400 font-semibold text-xl">Taksonomi</p>
                     <div className="mt-1 grid grid-cols-10">
