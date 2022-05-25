@@ -12,7 +12,7 @@ export default function KunciDeterminasi() {
 
     const navigate = useNavigate();
 
-    const genusTrue = useAppSelector(state => state.data.genus)
+    const genusTrue = useAppSelector(state => state.genus)
 
     const [ currentNode, setCurrentNode ] = useState(kunciDeterminasi.getNode(1));
     const [ backText, setBackText ] = useState('');
