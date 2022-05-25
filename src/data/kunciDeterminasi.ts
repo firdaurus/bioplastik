@@ -11,8 +11,8 @@ interface Node {
 
 interface KunciDeterminasi {
     data: Node[],
-    getNode: (id: number) => NodeContent[],
-    getBackwardNodeIdFrom: (id: number) => number,
+    getNode: (id: number) => Node,
+    getBackwardNodeFrom: (id: number) => Node | null,
 }
 
 const kunciDeterminasi: KunciDeterminasi = {
@@ -155,11 +155,12 @@ const kunciDeterminasi: KunciDeterminasi = {
     getNode: (id: number) => {
         const result =  kunciDeterminasi.data.find(node => node.id === id);
         if (!result) throw new Error(`Node with id ${id} not found`);
-        return result.content;
+        return result;
     },
 
-    getBackwardNodeIdFrom: (id: number) => {
-        return kunciDeterminasi.data.find(node => node.content.find(content => content.to === id))?.id || 0;
+    getBackwardNodeFrom: (id: number) => {
+        const node = kunciDeterminasi.data.find(node => node.content.find(content => content.to === id))
+        return !node ? null : node;
     }
 }
 

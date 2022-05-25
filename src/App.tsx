@@ -1,15 +1,29 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './index.css';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import KunciDeterminasi from './pages/KunciDeterminasi';
-import Salah from './pages/Salah';
-import Materi from './pages/Materi';
-import Loading from './pages/Loading';
-import Nilai from './pages/Nilai';
 
+import { setGenusFromHash } from './redux/slices/dataSlice';
+import { useAppDispatch } from './redux/hooks';
+
+import CaptureScan from './pages/CaptureScan';
+import KunciDeterminasi from './pages/KunciDeterminasi';
+import Loading from './pages/Loading';
+import Materi from './pages/Materi';
+import Nilai from './pages/Nilai';
+import Salah from './pages/Salah';
+
+import './index.css';
 
 function App() {
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const savedHash = localStorage.getItem('hash');
+    if (savedHash) {
+      dispatch(setGenusFromHash(savedHash));
+    }
+  }, [dispatch])
+
   return (
     <Router>
       <Routes>
@@ -18,6 +32,7 @@ function App() {
         <Route path="/materi" element={<Materi />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/nilai" element={<Nilai />} />
+        <Route path="/qr/:hash" element={<CaptureScan />} />
       </Routes>
     </Router>
   );

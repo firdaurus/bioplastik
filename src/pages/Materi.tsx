@@ -1,11 +1,29 @@
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import Header from '../components/Header';
 import fissidens from '../assets/images/fissidens.jpg';
+import Header from '../components/Header';
+import { getMateri } from '../data/linkQR';
+import MateriClass from '../data/materi/Materi';
+import { useAppSelector } from '../redux/hooks';
 
 export default function Materi() {
 
     const navigate = useNavigate()
+    const genus = useAppSelector(state => state.data.genus)
+
+    const [materi, setMateri] = useState<MateriClass | null>(null)
+
+    // Update data materi on load
+    useEffect(() => {
+        if (!genus) {
+            navigate('/', { replace: true })
+            return;
+        }
+
+        //Apply materi data into state
+        setMateri(getMateri(genus))
+    }, [genus, navigate])
     // const {data} = useData()
     // const [materiGenus, setMateriGenus] = React.useState(null)
 
@@ -33,12 +51,46 @@ export default function Materi() {
         <div>
             <Header />
             <div className="px-4">
-                <h1 className="text-center font-bold text-3xl mt-6 italic">Fissidens</h1>
+                <h1 className="text-center font-bold text-3xl mt-6 italic">{ materi?.name }</h1>
                 <div className="mt-8 flex justify-center">
                     <div className="flex flex-col items-center justify-center bg-gray-200 rounded-xl p-4">
-                        <img src={fissidens} alt="Gambar Bryophyta"  className="md:max-w-screen-sm"/>
-                        <span className="italic font-semibold text-lg mt-2">Fissidens</span>
-                        <span >ini sumber gambarnya</span>
+
+                        {/* Cover image */}
+                        <div className="flex flex-col items-center justify-center">
+                            <img src={fissidens} alt="Gambar Bryophyta"  className="md:max-w-screen-sm"/>
+                            <span className="italic font-semibold text-lg mt-2">Fissidens</span>
+                            <span>ini sumber gambarnya</span>
+                        </div>
+
+                        {/* Taxonomy */}
+                        <table className="grid grid-cols-2 w-full">
+                            <tbody>
+                                <tr>
+                                    <th className="w-1/2">Kingdom</th>
+                                    <td className="w-1/2">suatu kingdom</td>
+                                </tr>
+                                <tr>
+                                    <th>Kingdom</th>
+                                    <td>suatu kingdom</td>
+                                </tr>
+                                <tr>
+                                    <th>Kingdom</th>
+                                    <td>suatu kingdom</td>
+                                </tr>
+                                <tr>
+                                    <th>Kingdom</th>
+                                    <td>suatu kingdom</td>
+                                </tr>
+                                <tr>
+                                    <th>Kingdom</th>
+                                    <td>suatu kingdom</td>
+                                </tr>
+                                <tr>
+                                    <th>Kingdom</th>
+                                    <td>suatu kingdom</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 {/* <div className="flex flex-col gap-4 mt-8">

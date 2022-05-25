@@ -1,7 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+
+import linkQR from '../../data/linkQR';
 
 export interface DataState {
-    genus: string
+    genus: string,
 }
 
 const initialState: DataState = {
@@ -11,10 +13,21 @@ const initialState: DataState = {
 export const dataSlice = createSlice({
     name: 'data',
     initialState,
-    reducers: {},
+    reducers: {
+        setGenus: (state, action) => {
+            state.genus = action.payload
+        },
+
+        setGenusFromHash: (state, action) => {
+            const hash: string = action.payload;
+            const data = linkQR.find(materi => materi.hash === hash)
+            if (data){
+                state.genus = data.genus;
+            }
+        }
+    },
 })
 
-//TODO: Add reducers
-// export const { } = dataSlice.actions
+export const { setGenus, setGenusFromHash } = dataSlice.actions
 
 export default dataSlice.reducer

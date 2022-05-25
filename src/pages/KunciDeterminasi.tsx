@@ -1,38 +1,41 @@
-// import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import Header from '../components/Header'
 import KunciDeterminasiBack from '../components/KunciDeterminasiBack'
 import KunciDeterminasiGenus from '../components/KunciDeterminasiGenus'
 import KunciDeterminasiGroup from '../components/KunciDeterminasiGroup'
 import kunciDeterminasi from '../data/kunciDeterminasi'
+import { useAppSelector } from '../redux/hooks'
 
 export default function KunciDeterminasi() {
 
-    const [ currentNode, setCurrentNode ] = useState(1);
-    const [ nodeItems, setNodeItems ] = useState(kunciDeterminasi.getNode(1));
-    const [ backText, setBackText ] = useState('');
+    const navigate = useNavigate();
 
+    const genusTrue = useAppSelector(state => state.data.genus)
+
+    const [ currentNode, setCurrentNode ] = useState(kunciDeterminasi.getNode(1));
+    const [ backText, setBackText ] = useState('');
 
     //Handles back button click
     const handleBack = () => {
-        if (currentNode > 1) {
-            const backNodeId = kunciDeterminasi.getBackwardNodeIdFrom(currentNode);
-            setCurrentNode(backNodeId);
-            setNodeItems(kunciDeterminasi.getNode(backNodeId));
+        const backNode = kunciDeterminasi.getBackwardNodeFrom(currentNode.id);
+        if (backNode) {
+            setBackText(kunciDeterminasi.getBackwardNodeFrom(backNode.id)?.content.find(node => node.to === backNode.id)?.text || "");
+            setCurrentNode(backNode);
         }
     }
 
     //Handles the click of genus group click
     const handleGroupClick = (to: number) => {
-        setBackText(nodeItems.find(node => node.to === to)!.text);
-        setCurrentNode(to);
-        setNodeItems(kunciDeterminasi.getNode(to));
+        setBackText(currentNode.content.find(node => node.to === to)!.text);
+        setCurrentNode(kunciDeterminasi.getNode(to));
     }
 
     //Handles the click of genus click
     const handleGenusClick = (genus: string) => {
-        alert('You clicked ' + genus);
+        if (genus === genusTrue) navigate('/materi');
+        else navigate('/salah');
     }
 
     return (
@@ -43,10 +46,10 @@ export default function KunciDeterminasi() {
                 <span className="px-8 text-center text-md text-white mt-3">Pilihlah salah satu pernyataan yang sesuai dengan ciri yang teramati</span>
                 {
                     //Backward button
-                    kunciDeterminasi.getBackwardNodeIdFrom(currentNode) > 0 && <KunciDeterminasiBack text={backText} onClick={() => handleBack()} />
+                    kunciDeterminasi.getBackwardNodeFrom(currentNode.id) && <KunciDeterminasiBack text={backText} onClick={() => handleBack()} />
                 }
                 {
-                    nodeItems.map((item, i) => (
+                    currentNode.content.map((item, i) => (
                         item.genus ? <KunciDeterminasiGenus genus={item.genus} text={item.text} key={i} onClick={() => handleGenusClick(item.genus!)} /> : <KunciDeterminasiGroup key={i} text={item.text} onClick={() => handleGroupClick(item.to)} />
                     ))
                 }
