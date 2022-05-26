@@ -1,16 +1,16 @@
 import Materi from './Materi'
 
-class Polytrichum extends Materi {
+class Fissidens extends Materi {
     
-    name = 'Polytrichum'
+    name = 'Fissidens'
 
     classification = {
         kingdom: 'Plantae',
-        division: 'Bryophyta',
+        phylum: 'Bryophyta',
         class: 'Bryopsida',
-        order: 'Polytrichales',
-        family: 'Polytrichaceae',
-        genus: 'Polytrichum',
+        order: 'Dicranales',
+        family: 'Fissidentaceae',
+        genus: 'Fissidens',
     }
 
     createContent(){
@@ -21,4 +21,4 @@ class Polytrichum extends Materi {
     }
 }
 
-export default new Polytrichum()
+export default new Fissidens()

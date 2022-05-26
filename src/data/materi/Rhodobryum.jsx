@@ -1,16 +1,16 @@
 import Materi from './Materi'
 
-class Polytrichum extends Materi {
+class Rhodobryum extends Materi {
     
-    name = 'Polytrichum'
+    name = 'Rhodobryum'
 
     classification = {
         kingdom: 'Plantae',
         division: 'Bryophyta',
         class: 'Bryopsida',
-        order: 'Polytrichales',
-        family: 'Polytrichaceae',
-        genus: 'Polytrichum',
+        order: 'Bryales',
+        family: 'Bryaceae',
+        genus: 'Rhodobryum',
     }
 
     createContent(){
@@ -21,4 +21,4 @@ class Polytrichum extends Materi {
     }
 }
 
-export default new Polytrichum()
+export default new Rhodobryum()
