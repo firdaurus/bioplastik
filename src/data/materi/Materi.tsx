@@ -10,8 +10,7 @@ interface Taxonomy {
 }
 
 interface Section {
-    title: string,
-    content: JSX.Element
+    [key:string]: JSX.Element
 }
 
 abstract class Materi {
@@ -19,12 +18,10 @@ abstract class Materi {
     coverImage?: string;
     abstract name: string;
     abstract classification: Taxonomy;
-    protected content: Section[] = [];
-
-    protected abstract createContent(): JSX.Element;
+    abstract content: Section;
 
     protected render(): JSX.Element{
-        return this.createContent();
+        return <div>Halloooo</div>;
     }
 }
 

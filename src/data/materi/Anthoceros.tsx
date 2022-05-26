@@ -1,5 +1,7 @@
 import Materi from './Materi'
 
+import gambarFissidens from '../../assets/images/fissidens.jpg'
+
 class Anthoceros extends Materi {
     
     name = 'Anthoceros'
@@ -15,11 +17,21 @@ class Anthoceros extends Materi {
         author: '(Mulyadi, 2014)',
     }
 
-    createContent(){
-        
-        return <div>
-            Aku content
-        </div>
+    content = {
+        Deskripsi: (<div>
+            <img src={gambarFissidens} alt="Ini Gambar" />
+            <label className="blablabla">Gambar 1. Anthoceros</label>
+        </div>),
+
+        Habitat: (<div>
+            <img src={gambarFissidens} alt="Ini Gambar" />
+            <label className="blablabla">Gambar 1. Anthoceros</label>
+        </div>),
+
+        Referensi: (<div>
+            <img src={gambarFissidens} alt="Ini Gambar" />
+            <label className="blablabla">Gambar 1. Anthoceros</label>
+        </div>),
     }
 }
 
