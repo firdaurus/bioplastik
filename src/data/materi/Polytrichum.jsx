@@ -1,10 +1,8 @@
 import Materi from './Materi'
 
-import gambarFissidens from '../../assets/images/fissidens.jpg'
-
-class Anthoceros extends Materi {
+class Polytrichum extends Materi {
     
-    name = 'Anthoceros'
+    name = 'Polytrichum'
 
     classification = {
         kingdom: 'Plantae',
@@ -12,7 +10,7 @@ class Anthoceros extends Materi {
         class: 'Bryopsida',
         order: 'Polytrichales',
         family: 'Polytrichaceae',
-        genus: 'Anthoceros',
+        genus: 'Polytrichum',
     }
 
     content = {
@@ -33,4 +31,4 @@ class Anthoceros extends Materi {
     }
 }
 
-export default new Anthoceros()
+export default new Polytrichum()
