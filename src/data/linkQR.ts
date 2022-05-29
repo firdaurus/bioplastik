@@ -1,5 +1,6 @@
 import Materi from './materi/Materi';
 import Anthoceros from './materi/Anthoceros';
+import Bryum from './materi/Bryum';
 
 interface LinkQR {
     hash: string,
@@ -13,6 +14,11 @@ const linkQR: LinkQR[] = [
         genus: "Anthoceros",
         materi: Anthoceros,
     },
+    { 
+        hash: "f7a2c341",
+        genus: "Bryum",
+        materi: Bryum
+    }
 ]
 
 export const getMateri = (genus: string) => {

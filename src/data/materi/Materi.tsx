@@ -1,27 +1,35 @@
+import { sentenceCase } from '../../utils/helper';
+
 interface Taxonomy {
-    kingdom: string,
-    division: string,
-    class: string,
-    order: string,
-    family: string,
-    genus: string,
-    species?: string,
+    taxonomy: {
+        [key:string]: string,
+    }
     author?: string,
 }
 
-interface Section {
+export interface MateriSection {
     [key:string]: JSX.Element
 }
 
 abstract class Materi {
 
-    coverImage?: string;
+    abstract coverImage: {
+        img: string,
+        caption: string | JSX.Element,
+    };
     abstract name: string;
     abstract classification: Taxonomy;
-    abstract content: Section;
+    abstract sections: MateriSection;
 
-    protected render(): JSX.Element{
-        return <div>Halloooo</div>;
+    getSectionNames(){
+        return [
+            'Taksonomi',
+            ...Object.keys(this.sections),
+        ];
+    }
+
+    getSectionJSX(sectionName: string){
+        return this.sections[sentenceCase(sectionName)];
     }
 }
 
