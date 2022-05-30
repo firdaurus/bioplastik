@@ -23,7 +23,7 @@ export const dataSlice = createSlice({
     reducers: {
 
         clearData: (state) => {
-            state = initialState;
+            return initialState;
         },
 
         setGenus: (state, action) => {
@@ -52,7 +52,7 @@ export const dataSlice = createSlice({
         saveLatestKuisData: (state, action) => {
             const kuisData: MinimizedKuisData[] = action.payload;
             state.latestKuisData = kuisData;
-        }
+        },
     },
 })
 

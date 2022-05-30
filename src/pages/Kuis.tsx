@@ -14,6 +14,7 @@ import { saveScore, saveLatestKuisData } from "../redux/slices/dataSlice";
 export default function Kuis() {
 	const dispatch = useAppDispatch();
 	const kuisPart = useAppSelector((state) => state.partSoal);
+	const scores = useAppSelector((state) => state.scores);
 	const navigate = useNavigate();
 
 	const [kuises, setKuises] = useState<Soal[]>([]);
@@ -27,6 +28,13 @@ export default function Kuis() {
 			setKuises(getKuisesFromPart(kuisPart));
 		}
 	}, [kuisPart, navigate]);
+
+	useEffect(() => {
+		if (scores.length >= 2){
+			navigate("/nilai", { replace: true });
+			return;
+		}
+	}, [scores, navigate]);
 
 	const handleSelectAnswer = (questionId: number, answerId: number) => {
 		setKuises((prev) => {

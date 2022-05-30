@@ -28,7 +28,9 @@ export default function KunciJawaban() {
 		setKuises(rawDataToKuis(rawKuisData));
 	}, [rawKuisData, navigate]);
 
-	const handleRetry = () => {}; //TODO: Implement this
+	const handleRetry = () => {
+		navigate("/kuis", { replace: true });
+	};
 
 	const handleExit = () => {
 		dispatch(clearData());

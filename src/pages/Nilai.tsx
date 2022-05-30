@@ -33,6 +33,11 @@ export default function Nilai() {
                     <button onClick={handleShowAnswerKey} className="py-2 px-5 bg-orange-600 flex items-center gap-2 text-white rounded-full shadow-md mt-8">
                         <span>Kunci Jawaban</span>
                     </button>
+                    {
+                        scores.length > 1 && (
+                            <p className="font-medium text-white text-xl text-center mt-8">Nilai kuis sebelumnya: { scores[0] }</p>
+                        )
+                    }
                 </div>
             </div>
         </div>
