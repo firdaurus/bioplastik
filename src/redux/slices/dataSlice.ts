@@ -21,6 +21,11 @@ export const dataSlice = createSlice({
     name: 'data',
     initialState,
     reducers: {
+
+        clearData: (state) => {
+            state = initialState;
+        },
+
         setGenus: (state, action) => {
             state.genus = action.payload
         },
@@ -51,6 +56,6 @@ export const dataSlice = createSlice({
     },
 })
 
-export const { setGenus, setGenusFromHash, randomizePartSoal, saveScore, saveLatestKuisData } = dataSlice.actions
+export const { setGenus, setGenusFromHash, randomizePartSoal, saveScore, saveLatestKuisData, clearData } = dataSlice.actions
 
 export default dataSlice.reducer

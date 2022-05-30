@@ -21,6 +21,12 @@ export interface MinimizedKuisData {
     answer: number,
 }
 
+export const getSoalFromId = (id: number) => {
+    const result = kuis.find((soal) => soal.id === id);
+    if (!result) throw new Error("Kuis Not Found");
+    return result;
+}
+
 export const getKuisesFromPart = (part: number) => {
     const kuises = kuis.filter((_, i) => (i >= part*10 && i < (part+1)*10))
         .map(kuis => ({
@@ -52,6 +58,16 @@ export const getMinimizedKuisData = (kuises: Soal[]) => {
         pilihans: kuis.pilihans.map(pilihan => pilihan.id),
         answer: kuis.answer,
     }))
+}
+
+export function rawDataToKuis(data: MinimizedKuisData[]): Soal[] {
+    return data.map(x => {
+        return {
+            ...getSoalFromId(x.id),
+            pilihans: x.pilihans.map(idPilihan => getSoalFromId(x.id).pilihans.find(pilihan => pilihan.id === idPilihan)!),
+            answer: x.answer,
+        }
+    })
 }
 
 const kuis: Soal[] = [

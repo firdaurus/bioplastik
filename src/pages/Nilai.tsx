@@ -17,7 +17,7 @@ export default function Nilai() {
     }, [navigate, scores])
 
     const handleShowAnswerKey = () => {
-        navigate('/kunci-jawaban')
+        navigate('/kunci-jawaban', { replace: true })
     }
 
 

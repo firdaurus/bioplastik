@@ -44,7 +44,7 @@ export default function Kuis() {
 
 		dispatch(saveScore(score));
 		dispatch(saveLatestKuisData(getMinimizedKuisData(kuises))); //Save the latest kuis data
-		navigate("/nilai");
+		navigate("/nilai", { replace: true });
 	};
 
 	return (
