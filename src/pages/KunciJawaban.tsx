@@ -41,7 +41,7 @@ export default function KunciJawaban() {
 			<span className="font-bold text-2xl underline text-center mt-4">
 				KUNCI JAWABAN
 			</span>
-			<p className="pl-8">Nilaimu adalah: <strong>{ [...scores].pop() }</strong></p>
+			<p className="pl-8">Nilaimu adalah: <strong className="py-1 px-2 rounded-md bg-sky-800 text-white">{ [...scores].pop() }</strong></p>
 			<div className="flex flex-col select-none">
 				{kuises.map((kuis, i) => {
 					const isCorrectAnswer = kuis.pilihans.find(
@@ -82,15 +82,15 @@ export default function KunciJawaban() {
 												? pilihan.isCorrect
 													? "correct"
 													: "wrong"
-												: "neutral";
-
+												: pilihan.isCorrect ? "correct" : "neutral";
+										const isCorrectPilihan = pilihan.isCorrect;
 										return (
 											<div key={j} className="flex">
 												{/* <p>{abjad[j]}.&nbsp;{pilihan}</p> */}
 												<input
 													type="radio"
 													id={`${i}_${j}`}
-													name={`soal_${i}`}
+													// name={`soal_${i}`}
 													value={j}
 													className={`mt-1 mr-2 ${
 														accentType === "correct"
@@ -102,11 +102,11 @@ export default function KunciJawaban() {
 													}`}
 													// disabled
 													checked={
-														kuis.answer ===
-														pilihan.id
+														(kuis.answer ===
+														pilihan.id) || isCorrectPilihan
 													}
 												/>
-												<label htmlFor={`${i}_${j}`}>
+												<label htmlFor={`${i}_${j}`} className={ isCorrectPilihan ? "font-semibold text-green-700" : accentType === "wrong" ? "text-red-700" : "" }>
 													{pilihan.teks}
 												</label>
 											</div>
