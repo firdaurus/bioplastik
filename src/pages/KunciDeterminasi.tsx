@@ -39,9 +39,9 @@ export default function KunciDeterminasi() {
     }
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col min-h-screen">
             <Header />
-            <div className="flex flex-col select-none bg-primary w-screen min-h-screen pb-8">
+            <div className="flex flex-col select-none bg-primary w-screen items-stretch pb-8">
                 <h1 className="text-center font-semibold text-2xl mt-6 text-white">Kunci Determinasi Bryophyta</h1>
                 <span className="px-8 text-center text-md text-white mt-3">Pilihlah salah satu pernyataan yang sesuai dengan ciri yang teramati</span>
                 {
