@@ -9,13 +9,14 @@ class Camphylopus extends Materi {
 
 	classification = {
 		taxonomy: {
-			kingdom: "Plantae",
-			phylum: "Bryophyta",
-			class: "Bryopsida",
-			order: "Dicranales",
-			family: "Dicranaceae",
-			genus: "Camphylopus",
-			author: "(Sopacua, dkk. 2020)",
+			kingdom: 'Plantae',
+			division: 'Bryophyta',
+			class: 'Musci',
+			order: 'Dicranales',
+			family: 'Dicranaceae',
+			genus: 'Camphylopus',
+			species: 'Camphylopus sp.',
+			author: '(Storey, 2010)',
 		},
 	};
 
@@ -130,7 +131,7 @@ class Camphylopus extends Materi {
 				</p>
 				<p>
 					Storey, Malcolm. 2010. <em>Campylopus atrovirens.</em> [online].
-					Tersedia: http://www.bioimages.org.uk/html/p4/p46498.php [10
+					Tersedia: <a>http://www.bioimages.org.uk/html/p4/p46498.php</a> [10
 					Mei 2022]
 				</p>
 			</>
