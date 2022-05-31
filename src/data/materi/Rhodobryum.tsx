@@ -99,7 +99,7 @@ class Rhodobryum extends Materi {
 					Azuelo, Andrea., dkk. 2010. Diversity Ecological Status of
 					Bryophytes in Mt. Kitanglad, Bukidnom.{" "}
 					<em>Asian Journal of Biodiversity.</em> Vol. 1 No. 1. doi:{" "}
-					<a className="underline text-blue-500" href="http://dx.doi.org/10.7828/ajob.v1i1.102">
+					<a className="link" href="http://dx.doi.org/10.7828/ajob.v1i1.102">
 						http://dx.doi.org/10.7828/ajob.v1i1.102
 					</a>
 					.

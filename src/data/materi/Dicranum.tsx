@@ -6,12 +6,14 @@ class Dicranum extends Materi {
   name = "Dicranum";
 
   classification = {
-    kingdom: "Plantae",
-    phylum: "Bryophyta",
-    class: "Bryopsida",
-    order: "Dicranales",
-    family: "Dicranaceae",
-    genus: "Dicranum",
+    taxonomy: {
+      kingdom: "Plantae",
+      phylum: "Bryophyta",
+      class: "Bryopsida",
+      order: "Dicranales",
+      family: "Dicranaceae",
+      genus: "Dicranum",
+    },
     author: "(Sopacua, dkk. 2020)",
   };
 
@@ -20,7 +22,7 @@ class Dicranum extends Materi {
     caption: "(Sumber: Sopacua, dkk. 2020)",
   };
 
-  section = {
+  sections = {
     Deskripsi: (
       <div className="flex flex-col items-center">
         <p>
@@ -115,7 +117,7 @@ class Dicranum extends Materi {
           <em>
             Filogeni dan delimitasi spesies dalam genus lumut Dicranum Hedw.
           </em>{" "}
-          Tesis. Dari <a>https://hdl.handle.net/1887/28984</a>
+          Tesis. Dari <a className="link" href="https://hdl.handle.net/1887/28984">https://hdl.handle.net/1887/28984</a>
         </p>
         <p>
           Sopacua, Gledys; dkk. 2020.{" "}
@@ -124,7 +126,7 @@ class Dicranum extends Materi {
             Itawaka Kabupaten Maluku Tengah.
           </em>{" "}
           Jurnal Ilmiah Wahana Pendidikan. Vol. 6, No. 4, Desember 2020. Dari
-          <a>https://jurnal.unibrah.ac.id/index.php/JIWP</a>
+          <a className="link" href="https://jurnal.unibrah.ac.id/index.php/JIWP">https://jurnal.unibrah.ac.id/index.php/JIWP</a>
         </p>
         <p>
           Tim Pudak. 2014.{" "}

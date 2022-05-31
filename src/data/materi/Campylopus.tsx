@@ -25,7 +25,7 @@ class Camphylopus extends Materi {
 		caption: "(Sumber: Afrida Khairani Manurung. 2019)",
 	};
 
-	section = {
+	sections = {
 		Deskripsi: (
 			<div className="flex flex-col items-center">
 				{/* Gambar 1 */}
@@ -131,7 +131,7 @@ class Camphylopus extends Materi {
 				</p>
 				<p>
 					Storey, Malcolm. 2010. <em>Campylopus atrovirens.</em> [online].
-					Tersedia: <a>http://www.bioimages.org.uk/html/p4/p46498.php</a> [10
+					Tersedia: <a className="link" href="http://www.bioimages.org.uk/html/p4/p46498.php">http://www.bioimages.org.uk/html/p4/p46498.php</a> [10
 					Mei 2022]
 				</p>
 			</>

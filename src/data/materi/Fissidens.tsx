@@ -6,12 +6,14 @@ class Fissidens extends Materi {
   name = "Fissidens";
 
   classification = {
-    kingdom: "Plantae",
-    divisio: "Bryophyta",
-    classis: "Bryopsida",
-    ordo: "Dicranales",
-    familia: "Fissidentaceae",
-    genus: "Fissidens",
+    taxonomy: {
+      kingdom: "Plantae",
+      divisio: "Bryophyta",
+      classis: "Bryopsida",
+      ordo: "Dicranales",
+      familia: "Fissidentaceae",
+      genus: "Fissidens",
+    }
   };
 
   coverImage = {
@@ -26,7 +28,7 @@ class Fissidens extends Materi {
     ),
   };
 
-  section = {
+  sections = {
     Deskripsi: (
       <p>
         Genus <em>Fissidens</em> termasuk dalam keluarga Fissidentaceae. Genus
