@@ -1,4 +1,4 @@
-import { sentenceCase } from '../../utils/helper';
+import { titleCase, slugToTitle } from '../../utils/helper';
 
 interface Taxonomy {
     taxonomy: {
@@ -29,7 +29,7 @@ abstract class Materi {
     }
 
     getSectionJSX(sectionName: string){
-        return this.sections[sentenceCase(sectionName)];
+        return this.sections[titleCase(slugToTitle(sectionName))]; //FIXME: Handle for accessing "Siklus Hidup"
     }
 }
 

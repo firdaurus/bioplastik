@@ -11,8 +11,11 @@ export const slugToTitle = (slug: string) => {
     return slug.replace(/-/g, ' ');
 }
 
-export const sentenceCase = (str: string) => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+//Create a function which turn "siklus hidup" into "Siklus Hidup"
+export const titleCase = (str: string) => {
+    return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
 }
 
 export const shuffleArray = (array: any[]) => {

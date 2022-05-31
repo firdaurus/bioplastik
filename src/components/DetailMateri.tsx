@@ -1,7 +1,7 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 import { useMateri } from "../pages/Materi";
-import { sentenceCase } from "../utils/helper";
+import { titleCase, slugToTitle } from "../utils/helper";
 
 export default function DetailMateri() {
 	const navigate = useNavigate();
@@ -47,7 +47,7 @@ export default function DetailMateri() {
 					</div>
 				</div>
 			) : sectionName ? <div className="select-none tracking-wide flex flex-col gap-4">
-        <h3 className="border-b border-gray-400 font-semibold text-xl tracking-normal">{ sentenceCase(sectionName) }</h3>
+        <h3 className="border-b border-gray-400 font-semibold text-xl tracking-normal">{ titleCase(slugToTitle(sectionName)) }</h3>
         { materi.getSectionJSX(sectionName) }
       </div>
       : (
