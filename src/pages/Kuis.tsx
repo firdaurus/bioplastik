@@ -46,7 +46,9 @@ export default function Kuis() {
 			});
 		});
 	};
-	const handleBack = () => {}; //TODO: Implement this
+	const handleBack = () => {
+		navigate('/nilai', { replace: true });
+	};
 	const handleSubmit = () => {
 		let score = getScore(kuises);
 
@@ -93,7 +95,7 @@ export default function Kuis() {
 														kuis.id,
 														pilihan.id
 													)
-												} //TODO: Implement onChange event
+												}
 												type="radio"
 												id={`${i}_${j}`}
 												name={`soal_${i}`}
