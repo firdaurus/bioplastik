@@ -3,14 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 import Header from "../components/Header";
 import { Soal, rawDataToKuis } from "../data/kuis";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { clearData } from "../redux/slices/dataSlice";
+import { useAppSelector } from "../redux/hooks";
 import appConfig from "../utils/appConfig";
 
 const config = appConfig.kunciJawaban;
 
 export default function KunciJawaban() {
-	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const rawKuisData = useAppSelector((state) => state.latestKuisData);
 	const scores = useAppSelector((state) => state.scores);
