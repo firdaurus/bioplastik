@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useOutletContext, Outlet } from 'react-router-dom';
 
-import fissidens from '../assets/images/fissidens.jpg';
 import Header from '../components/Header';
 import { getMateri } from '../data/linkQR';
 import MateriClass from '../data/materi/Materi';

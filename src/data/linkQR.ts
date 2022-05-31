@@ -2,10 +2,6 @@ import Materi from './materi/Materi';
 import Anthoceros from './materi/Anthoceros';
 import Bryum from './materi/Bryum';
 import Campylopus from './materi/Campylopus';
-import Dicranum from './materi/Dicranum';
-import Fissidens from './materi/Fissidens';
-import Marchantia from './materi/Marchantia';
-import Polytrichum from './materi/Polytrichum';
 import Rhodobryum from './materi/Rhodobryum';
 
 interface LinkQR {
