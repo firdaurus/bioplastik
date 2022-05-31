@@ -119,6 +119,7 @@ export default function KunciJawaban() {
 															pilihan.id ||
 														isCorrectPilihan
 													}
+													readOnly
 												/>
 												<label
 													htmlFor={`${i}_${j}`}
@@ -151,19 +152,14 @@ export default function KunciJawaban() {
 						Coba Lagi
 					</button>
 				) : (
-					<button
-						className="text-orange-600 mt-8 mb-8 border border-orange-600 px-6 py-1 rounded-lg shadow-md"
-						onClick={handleBackToNilai}
-					>
-						Kembali
-					</button>
+					<span></span>
 				)}
 
 				<button
 					className="text-white mt-8 mb-8 bg-primary px-6 py-1 rounded-lg shadow-md"
-					onClick={handleExit}
+					onClick={handleBackToNilai}
 				>
-					Keluar
+					Kembali
 				</button>
 			</div>
 			{/* <button onClick={handleClick}>Click Me!</button>
