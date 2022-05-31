@@ -35,11 +35,6 @@ export default function KunciJawaban() {
 		navigate("/nilai", { replace: true });
 	};
 
-	const handleExit = () => {
-		dispatch(clearData());
-		navigate("/", { replace: true }); //TODO: Redirect to thank you page
-	};
-
 	return (
 		<div className="flex flex-col gap-2">
 			<Header />
