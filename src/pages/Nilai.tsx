@@ -8,7 +8,7 @@ import { useAppSelector } from '../redux/hooks'
 export default function Nilai() {
 
     const navigate = useNavigate()
-    const scores = useAppSelector(state => state.scores)
+    const scores = useAppSelector(state => state.data.scores)
     
     useEffect(() => {
         if (!scores.length){

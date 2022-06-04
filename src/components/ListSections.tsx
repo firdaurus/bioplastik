@@ -13,7 +13,7 @@ export default function ListSections() {
     }
 
     function handleClickRuangEkspresi(){
-        navigate('/ruang-ekspresi', { replace: true })
+        navigate('/ruang-ekspresi')
     }
 
 	return (

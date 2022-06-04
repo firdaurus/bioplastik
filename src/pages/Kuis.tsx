@@ -13,8 +13,8 @@ import { saveScore, saveLatestKuisData } from "../redux/slices/dataSlice";
 
 export default function Kuis() {
 	const dispatch = useAppDispatch();
-	const kuisPart = useAppSelector((state) => state.partSoal);
-	const scores = useAppSelector((state) => state.scores);
+	const kuisPart = useAppSelector((state) => state.data.partSoal);
+	const scores = useAppSelector((state) => state.data.scores);
 	const navigate = useNavigate();
 
 	const [kuises, setKuises] = useState<Soal[]>([]);
