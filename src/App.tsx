@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import { Navigate, Routes, Route, useLocation, Outlet } from "react-router-dom";
 import { useAppSelector } from "./redux/hooks";
 
@@ -11,10 +12,12 @@ import Salah from "./pages/Salah";
 import Kuis from "./pages/Kuis";
 import KunciJawaban from "./pages/KunciJawaban";
 import RuangEkspresi from "./pages/RuangEkspresi";
-
-import Login from "./pages/admin/Login";
+import Loading from "./pages/Loading";
 
 import "./index.css";
+
+const Login = lazy(() => import("./pages/admin/Login"));
+const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
 
 function App() {
 	return (
@@ -30,11 +33,21 @@ function App() {
 			<Route path="/kuis" element={<Kuis />} />
 			<Route path="/kunci-jawaban" element={<KunciJawaban />} />
 			<Route path="/ruang-ekspresi" element={<RuangEkspresi />} />
+			<Route path="/loading" element={<Loading />} />
 
-			<Route path="/login" element={<Login />} />
+			<Route path="/login" element={
+				<Suspense fallback={<Loading />}>
+					<Login />
+				</Suspense>
+			} />
 
 			<Route path="/admin" element={<RequireAuth />}>
-				<Route path="dashboard" element={<div>Dashbaord</div>} />
+				<Route index element={<Navigate to="/admin/dashboard" replace />} />
+				<Route path="dashboard" element={
+					<Suspense fallback={<Loading />}>
+						<Dashboard />
+					</Suspense>
+				} />
 			</Route>
 		</Routes>
 	);

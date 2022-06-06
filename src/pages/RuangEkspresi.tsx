@@ -112,6 +112,7 @@ export default function RuangEkspresi() {
 						<button
 							className="bg-white mt-8 mb-8 text-primary px-6 py-1 rounded-lg shadow-md disabled:opacity-80"
 							disabled={loading}
+							onClick={(e) => navigate(-1)}
 						>
 							Kembali
 						</button>
