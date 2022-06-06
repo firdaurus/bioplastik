@@ -10,8 +10,8 @@ const config = appConfig.kunciJawaban;
 
 export default function KunciJawaban() {
 	const navigate = useNavigate();
-	const rawKuisData = useAppSelector((state) => state.latestKuisData);
-	const scores = useAppSelector((state) => state.scores);
+	const rawKuisData = useAppSelector((state) => state.data.latestKuisData);
+	const scores = useAppSelector((state) => state.data.scores);
 
 	const [kuises, setKuises] = useState<Soal[]>([]);
 

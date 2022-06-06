@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import Loading from './Loading';
 
@@ -12,12 +12,12 @@ import { useAppDispatch } from '../redux/hooks'
 export default function CaptureScan() {
 
   const dispatch = useAppDispatch()
+  const { hash } = useParams()
   const navigate = useNavigate()
   const [isError, setError] = useState(false)
 
   useEffect(() => {
     //Retrieve the hash from the url (localhost:3000/qr/<hash>)
-    const hash = window.location.pathname.split('/').at(-1);
     
     //Check if the hash is in the list of QR codes
     const materi = linkQR.find(materi => materi.hash === hash);
@@ -25,14 +25,13 @@ export default function CaptureScan() {
       //Update redux state
       dispatch(setGenus(materi.genus))
       dispatch(randomizePartSoal())
-      localStorage.setItem('hash', hash!)
       //Navigate to the next page
       navigate('/', { replace: true })
     }
     else {
       setError(true);
     }
-  }, [dispatch, navigate])
+  }, [dispatch, navigate, hash])
 
   return isError ? <div>Error</div> : <Loading />
 }

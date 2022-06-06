@@ -11,7 +11,7 @@ type ContextType = { materi: MateriClass }
 export default function Materi() {
 
     const navigate = useNavigate()
-    const genus = useAppSelector(state => state.genus)
+    const genus = useAppSelector(state => state.data.genus)
 
     const [materi, setMateri] = useState<MateriClass | null>(null)
     
