@@ -7,7 +7,6 @@ import linkQR from '../data/linkQR'
 import { setGenus, randomizePartSoal, clearData } from '../redux/slices/dataSlice'
 import { useAppDispatch } from '../redux/hooks'
 
-//TODO: Add edge case for when student scan for different genus
 
 export default function CaptureScan() {
 
