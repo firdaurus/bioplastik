@@ -3,6 +3,10 @@ import Anthoceros from './materi/Anthoceros';
 import Bryum from './materi/Bryum';
 import Campylopus from './materi/Campylopus';
 import Rhodobryum from './materi/Rhodobryum';
+import Dicranum from './materi/Dicranum';
+import Fissidens from './materi/Fissidens';
+import Marchantia from './materi/Marchantia';
+import Polytrichum from './materi/Polytrichum';
 
 interface LinkQR {
     hash: string,
@@ -26,26 +30,26 @@ const linkQR: LinkQR[] = [
         genus: "Campylopus",
         materi: Campylopus
     },
-    // { 
-    //     hash: "0ba71c9d",
-    //     genus: "Dicranum",
-    //     materi: Dicranum
-    // },
-    // { 
-    //     hash: "ce031552",
-    //     genus: "Fissidens",
-    //     materi: Fissidens
-    // },
-    // { 
-    //     hash: "d5d53076",
-    //     genus: "Marchantia",
-    //     materi: Marchantia
-    // }, 
-    // { 
-    //     hash: "c9352bff",
-    //     genus: "Polytrichum",
-    //     materi: Polytrichum,
-    // }, 
+    { 
+        hash: "0ba71c9d",
+        genus: "Dicranum",
+        materi: Dicranum
+    },
+    { 
+        hash: "ce031552",
+        genus: "Fissidens",
+        materi: Fissidens
+    },
+    { 
+        hash: "d5d53076",
+        genus: "Marchantia",
+        materi: Marchantia
+    }, 
+    { 
+        hash: "c9352bff",
+        genus: "Polytrichum",
+        materi: Polytrichum,
+    }, 
     { 
         hash: "8db8e346",
         genus: "Rhodobryum",
