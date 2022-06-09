@@ -1,6 +1,6 @@
 import Materi from "./Materi";
 import gambar1 from "../../assets/images/Dicranum/1.png";
-import gambar2 from "../../assets/images/Dicranum/2.png";
+import gambar2 from "../../assets/images/Dicranum/2.jpg";
 
 class Dicranum extends Materi {
   name = "Dicranum";
