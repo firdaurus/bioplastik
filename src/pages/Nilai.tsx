@@ -22,9 +22,9 @@ export default function Nilai() {
 
 
     return (
-        <div className="h-screen bg-primary flex flex-col">
+        <div className="min-h-screen w-screen bg-primary flex flex-col">
             <Header shadow />
-            <div className="w-full h-full grid place-items-center p-16 montserrat">
+            <div className="w-full flex-grow grid place-items-center p-16 montserrat">
                 <div className="flex flex-col items-center">
                     <p className="font-medium text-white text-2xl text-center">Nilai :</p>
                     <p className="font-medium text-white text-10xl text-center  mt-6">{ [...scores].pop() }</p>

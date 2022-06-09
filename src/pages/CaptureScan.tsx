@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Loading from './Loading';
 
 import linkQR from '../data/linkQR'
-import { setGenus, randomizePartSoal } from '../redux/slices/dataSlice'
+import { setGenus, randomizePartSoal, clearData } from '../redux/slices/dataSlice'
 import { useAppDispatch } from '../redux/hooks'
 
 //TODO: Add edge case for when student scan for different genus
@@ -22,6 +22,7 @@ export default function CaptureScan() {
     //Check if the hash is in the list of QR codes
     const materi = linkQR.find(materi => materi.hash === hash);
     if (materi){
+      dispatch(clearData())
       //Update redux state
       dispatch(setGenus(materi.genus))
       dispatch(randomizePartSoal())

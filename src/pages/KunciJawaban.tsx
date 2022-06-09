@@ -33,6 +33,10 @@ export default function KunciJawaban() {
 		navigate("/nilai", { replace: true });
 	};
 
+	const handleBackToMateri = () => {
+		navigate("/materi")
+	}
+
 	return (
 		<div className="flex flex-col gap-2">
 			<Header />
@@ -138,22 +142,31 @@ export default function KunciJawaban() {
 			</div>
 			<div className="flex justify-between px-6 pb-4">
 				{scores.length === 1 ? (
-					<button
-						className="text-orange-600 mt-8 mb-8 border border-orange-600 px-6 py-1 rounded-lg shadow-md"
-						onClick={handleRetry}
-					>
-						Coba Lagi
-					</button>
+					<>
+						<button
+							className="text-orange-600 mt-8 mb-8 border border-orange-600 px-6 py-1 rounded-lg shadow-md"
+							onClick={handleRetry}
+						>
+							Coba Lagi
+						</button>
+						<button
+							className="text-white mt-8 mb-8 bg-primary px-6 py-1 rounded-lg shadow-md"
+							onClick={handleBackToNilai}
+						>
+							Kembali
+						</button>
+					</>
 				) : (
+					<>
 					<span></span>
+					<button
+							className="text-white mt-8 mb-8 bg-primary px-6 py-1 rounded-lg shadow-md"
+							onClick={handleBackToMateri}
+						>
+							Kembali
+						</button>
+					</>
 				)}
-
-				<button
-					className="text-white mt-8 mb-8 bg-primary px-6 py-1 rounded-lg shadow-md"
-					onClick={handleBackToNilai}
-				>
-					Kembali
-				</button>
 			</div>
 			{/* <button onClick={handleClick}>Click Me!</button>
             <button onClick={handleWarna}>Ubah Warna</button>

@@ -9,7 +9,7 @@ export default function ListSections() {
 	const { materi } = useMateri();
 
     function handleClickKuis(){
-        navigate('/kuis', { replace: true })
+        navigate('/kuis')
     }
 
     function handleClickRuangEkspresi(){
