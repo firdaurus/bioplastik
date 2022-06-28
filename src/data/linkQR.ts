@@ -36,7 +36,7 @@ const linkQR: LinkQR[] = [
         materi: Dicranum
     },
     { 
-        hash: "ce031552",
+        hash: "9cec5302",
         genus: "Fissidens",
         materi: Fissidens
     },
@@ -46,12 +46,12 @@ const linkQR: LinkQR[] = [
         materi: Marchantia
     }, 
     { 
-        hash: "c9352bff",
+        hash: "34c0df48",
         genus: "Polytrichum",
         materi: Polytrichum,
     }, 
     { 
-        hash: "8db8e346",
+        hash: "a5772ff3",
         genus: "Rhodobryum",
         materi: Rhodobryum,
     },
